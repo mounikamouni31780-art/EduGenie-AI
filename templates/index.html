@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ app_name }} — AI Learning Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <span class="badge">AI Learning Assistant</span>
+        <h1>EduGenie</h1>
+        <p>Ask, understand, practice, summarize, and plan your learning with Gemini.</p>
+      </div>
+      <div class="spark">✦</div>
+    </header>
+
+    <section class="card">
+      <label for="task">Choose a task</label>
+      <select id="task">
+        <option value="qa">Ask a Question</option>
+        <option value="explain">Explain a Topic</option>
+        <option value="quiz">Generate Quiz</option>
+        <option value="summarize">Summarize</option>
+        <option value="learn">Learning Path</option>
+      </select>
+
+      <div id="levelWrap" class="field hidden">
+        <label for="level">Learner level</label>
+        <select id="level">
+          <option>beginner</option>
+          <option>intermediate</option>
+          <option>advanced</option>
+        </select>
+      </div>
+
+      <div id="hoursWrap" class="field hidden">
+        <label for="hours">Hours per week</label>
+        <input id="hours" type="number" min="1" max="60" value="5">
+      </div>
+
+      <label for="inputText" id="inputLabel">Your question</label>
+      <textarea id="inputText" rows="9" placeholder="Example: What is photosynthesis?"></textarea>
+
+      <button id="submitBtn">✨ Generate</button>
+    </section>
+
+    <section id="resultCard" class="card result-card hidden">
+      <div class="result-head">
+        <h2>Result</h2>
+        <button id="copyBtn" class="secondary">Copy</button>
+      </div>
+      <div id="result"></div>
+    </section>
+
+    <footer>
+      <span>EduGenie • FastAPI + Gemini</span>
+      <a href="/docs" target="_blank">API docs</a>
+    </footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
